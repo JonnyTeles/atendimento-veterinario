@@ -1,0 +1,28 @@
+p {
+    margin: 10px;
+}
+
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+mat-card {
+    width: 90%;
+    height: fit-content;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    background-image: url('./../../assets/background/SL-100420-36140-29.jpg');
+    background-size: contain;
+}

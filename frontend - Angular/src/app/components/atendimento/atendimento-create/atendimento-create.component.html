@@ -1,0 +1,104 @@
+<div class="background">
+    <div class="container">
+        <mat-card>
+            <mat-card-title>Novo atendimento</mat-card-title>
+            <form [formGroup]="atendimentoForm" *ngIf="atendimentoForm"
+                #formDir="ngForm" (submit)="createAtendimento()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Data e Hora</mat-label>
+                    <input matInput placeholder="Data" type="datetime-local"
+                        formControlName="data" name="data" autocomplete="nope">
+                        <mat-icon matSuffix class="icon">calendar_month</mat-icon>
+                        <mat-error *ngIf="data.errors?.['required']">O campo data é
+                            <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Cliente</mat-label>
+                    <mat-select matInput placeholder="Cliente"
+                        formControlName="clienteId" name="cliente">
+                        <mat-option *ngFor="let clientes of cliente"
+                            [value]="clientes.id">
+                            {{clientes.id}} - {{clientes.nome}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix class="icon">person</mat-icon>
+                    <mat-error *ngIf="clienteId.errors?.['required']">O campo cliente é
+                        <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Cachorro</mat-label>
+                    <mat-select matInput placeholder="Cachorro"
+                        formControlName="cachorroId" name="cachorro">
+                        <mat-option *ngFor="let cachorros of cachorro"
+                            [value]="cachorros.id">
+                            {{cachorros.id}} - {{cachorros.nome}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix class="icon">pets</mat-icon>
+                    <mat-error *ngIf="cachorroId.errors?.['required']">O campo cachorro é
+                        <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Veterinário</mat-label>
+                    <mat-select matInput placeholder="Veterinário"
+                        formControlName="veterinarioId" name="veterinario">
+                        <mat-option *ngFor="let veterinarios of veterinario"
+                            [value]="veterinarios.id">
+                            {{veterinarios.id}} - {{veterinarios.nome}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix class="icon">person</mat-icon>
+                    <mat-error *ngIf="veterinarioId.errors?.['required']">O veterinário data é
+                        <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Diagnóstico</mat-label>
+                    <input matInput formControlName="diagnostico" name="diagnostico"
+                        autocomplete="nope">
+                        <mat-icon matSuffix class="icon">comment</mat-icon>
+                        <mat-error *ngIf="diagnostico.errors?.['required']">O campo diagnóstico é
+                            <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Comentários</mat-label>
+                    <textarea matInput
+                        formControlName="comentarios" name="comentarios"
+                        autocomplete="nope"></textarea>
+                        <mat-icon matSuffix class="icon">comment</mat-icon>
+                        <mat-error *ngIf="comentarios.errors?.['required']">O campo comentarios é
+                            <strong>obrigatório.</strong></mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary">
+                    <i class="material-icons">
+                        save
+                    </i>
+                    Salvar
+                </button>
+
+                <button mat-raised-button (click)="cancel()" color="warn">
+                    <i class="material-icons">
+                        cancel
+                    </i>
+                    Cancelar
+                </button>
+
+            </form>
+
+        </mat-card>
+
+        <div class="img" *ngIf="invalido">
+            <img src="../../../../assets/img/dogifollowconfused.png" alt="k">
+        </div>
+        <div class="img" *ngIf="!invalido">
+            <img src="../../../../assets/img/dog-cabeca.png" alt="k">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+.raca {
+  cursor: pointer;
+}
+
+.raca:hover {
+  color: #0000FF;
+}
+
+.filter{
+  background-color: white;
+  margin-left: 20px;
+  width: 30%;
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  background-image: url('./../../../../assets/background/SL-100420-36140-29.jpg');
+  background-size: contain;
+}

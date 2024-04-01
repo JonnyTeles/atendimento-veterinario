@@ -1,0 +1,30 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url('../../../../assets/background/SL-100420-36140-29.jpg');
+    background-size: cover;
+    background-position-x: 4000px;
+    background-position-y: 100px ;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.header .logo {
+    max-height: 80px;
+}
+
+.example-spacer {
+   flex: 1 1 auto;
+}
+
+.link{
+font-size: 15px !important;
+font-style: italic;
+font-weight: bold;
+}

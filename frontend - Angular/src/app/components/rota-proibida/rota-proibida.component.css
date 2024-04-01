@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+img {
+    margin-top: -70px;
+   width: 50%;
+   margin-left: 70px;
+}
+
+.balao {
+    margin: 10px;
+    margin-left: 120px;
+    width: 43%;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 45px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.balao::after {
+    content: "";
+    width: 25px;
+    height: 25px;
+    display: block;
+    position: absolute;
+    top: 78px;
+    left: 260px;
+    border: 2px solid;
+    background-color: white;
+    border-color: transparent black black transparent;
+    transform: rotate(45deg);
+}
+
+a{
+    color: blue;
+}

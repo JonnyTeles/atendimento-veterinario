@@ -1,0 +1,23 @@
+<mat-toolbar class="header mat-elevation-z4">
+    <span>
+        <a routerLink="/">
+            <img src="../../../../assets/img/headerImg .png" alt="logo" class="logo">
+        </a>
+    </span>
+    <span class="title-group">
+        <a routerLink="{{routeUrl}}">
+            <i class="material-icons">
+                {{icon}}
+            </i>
+            {{title}}
+        </a>
+    </span>
+    <span class="example-spacer"></span>
+    <a routerLink="/login-vet" class="link" *ngIf="!veterinarioService.isUserLoggedIn() && !clienteService.isUserLoggedIn()">
+        <i class="material-icons">
+            person
+        </i>
+        Acesso Restrito
+    </a>
+    
+</mat-toolbar>

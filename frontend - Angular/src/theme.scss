@@ -1,0 +1,20 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$my-dark-theme-background: (
+  status-bar: green,
+  app-bar:    map_get($mat-blue, 900),
+  background-image: url('assets/background/SL-100420-36140-29.jpg'),
+  hover:      rgba(white, 0.04), 
+  card:       map_get($mat-red, 800),
+  dialog:     map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($mat-grey, 800),
+  focused-button: $white-6-opacity,
+  selected-button: map_get($mat-grey, 900),
+  selected-disabled-button: map_get($mat-grey, 800),
+  disabled-button-toggle: black,
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: black,
+);

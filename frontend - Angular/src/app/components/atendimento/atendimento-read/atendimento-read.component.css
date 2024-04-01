@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit>i {
+  color: #3F51B5;
+}
+
+.delete {
+  margin-right: 10px;
+}
+
+.delete>i {
+  color: #e35e6b
+}
+
+.profile>i {
+  color: #3F51B5
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  background-image: url('../../../../assets/background/SL-100420-36140-29.jpg');
+  background-size: contain;
+}

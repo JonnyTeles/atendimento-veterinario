@@ -1,0 +1,58 @@
+<div class="background">
+<div class="container">
+    <mat-card>
+        <mat-card-title>Excluir Veterinário</mat-card-title>
+        <form [formGroup]="veterinarioForm" #formDir="ngForm"
+            (submit)="deleteVeterinario()">
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+               <input matInput
+                   [value]="veterinario.id" name="id" formControlName="id">
+                   <mat-icon matSuffix class="icon">fingerprint</mat-icon>
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+                <mat-label>Nome completo</mat-label>
+               <input matInput
+                   [value]="veterinario.nome" name="nome"
+                   formControlName="nome">
+                   <mat-icon matSuffix class="icon">person</mat-icon>
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+                <mat-label>E-mail</mat-label>
+               <input matInput 
+                   [value]="veterinario.email" name="email"
+                   formControlName="email">
+                   <mat-icon matSuffix class="icon">mail</mat-icon>
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+                <mat-label>CPF</mat-label>
+               <input matInput
+                   [value]="veterinario.cpf" name="cpf" formControlName="cpf">
+                   <mat-icon matSuffix class="icon">assignment_ind</mat-icon>
+           </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Especializacao</mat-label>
+                <input matInput
+                    [value]="veterinario.especializacao" name="especialziacao"
+                    formControlName="especializacao">
+                    <mat-icon matSuffix class="icon">badge</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button type="submit" color="warn">
+                <i class="material-icons">
+                    delete
+                </i>
+                Excluir
+            </button>
+            <button mat-raised-button (click)="cancel()" color="primary">
+                <i class="material-icons">
+                    cancel
+                </i>
+                Cancelar
+            </button>
+        </form>
+    </mat-card>
+    <div class="img">
+        <img src="../../../../assets/img/dogifollowconfused.png" alt="k">
+    </div>
+</div>
+</div>

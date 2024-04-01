@@ -1,0 +1,28 @@
+.container {
+    position: absolute;
+    top: 64px;
+    bottom: 64px;
+    left: 0;
+    right: 0;
+}
+
+.sidenav {
+    background-image: linear-gradient(#3F51B5, #4d22e9);
+    width: 200px;
+    position: fixed;
+    top: 64px;
+    height: 100%;
+}
+
+.sidenav a {
+    color: #fff;
+}
+
+.sidenav i {
+    padding-right: 10px;
+}
+
+.content {
+    padding: 16;
+    background-color: #fff;
+}

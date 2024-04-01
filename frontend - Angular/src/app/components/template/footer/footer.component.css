@@ -1,0 +1,26 @@
+.footer{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    background-image: url('../../../../assets/background/SL-100420-36140-29.jpg');
+    background-size: cover;
+    background-position-x: 3000px;
+    background-position-y: 100px ;
+}
+
+.icons {
+    max-width: 50px;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+.direitos {
+    padding: 5px;
+    margin-top: 10px;
+    align-items: center;
+    font-size: 12px !important;
+    font-weight: bold;
+}

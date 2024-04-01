@@ -1,0 +1,51 @@
+<div class="background">
+    <div class="container">
+        <mat-card>
+            <mat-card-title>Excluir Cachorro</mat-card-title>
+            <form [formGroup]="cachorroForm" #formDir="ngForm"
+                (submit)="deleteCachorro()" *ngIf="cachorroForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput placeholder="ID"
+                        name="id" formControlName="id">
+                        <mat-icon matSuffix class="icon">fingerprint</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput placeholder="Nome"
+                        name="nome" formControlName="nome">
+                        <mat-icon matSuffix class="icon">pets</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Raça</mat-label>
+                    <input matInput placeholder="Raça"
+                        name="raca" formControlName="racaId">
+                        <mat-icon matSuffix class="icon">pets</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tutor</mat-label>
+                    <input matInput placeholder="Tutor"
+                        name="tutor" formControlName="clienteId">
+                        <mat-icon matSuffix class="icon">person</mat-icon>
+                </mat-form-field>
+                <button mat-raised-button type="submit" color="warn">
+                    <i class="material-icons">
+                        delete
+                    </i>
+                    Excluir
+                </button>
+
+                <button mat-raised-button (click)="cancel()" color="primary">
+                    <i class="material-icons">
+                        cancel
+                    </i>
+                    Cancelar
+                </button>
+            </form>
+        </mat-card>
+
+        <div class="img">
+            <img src="../../../../assets/img/dogifollowconfused.png" alt="k">
+        </div>
+    </div>
+</div>

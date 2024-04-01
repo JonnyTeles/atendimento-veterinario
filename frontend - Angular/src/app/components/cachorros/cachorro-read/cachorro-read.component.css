@@ -1,0 +1,33 @@
+table {
+   width: 100%;
+}
+
+.edit {
+   margin-right: 10px;
+}
+
+.edit>i {
+   color: #3F51B5;
+}
+
+.delete>i {
+   color: #e35e6b
+}
+
+.dogProfile {
+   cursor: pointer;
+}
+
+.dogProfile:hover {
+   color: #0000FF;
+}
+
+.filter{
+   margin-left: 20px;
+   width: 30%;
+}
+
+.search-input:focus button i {
+   color: red;
+} 
+

@@ -1,0 +1,175 @@
+.container2 {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card2 {
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(#F5F5F5, #F5F5F5);
+    transition: all .5s;
+}
+
+.card2:hover {
+    background-image: linear-gradient(#3F51B5, #4d22e9);
+}
+
+.card2 .img2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('./../../../../assets/img/dogifollow.png');
+    background-size: cover;
+    background-position: center;
+    transition: all .5s;
+    z-index: 2;
+    position: relative;
+    opacity: .8;
+}
+
+.card2 .img2 span {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    font-weight: 100;
+    font-style: italic;
+    transition: all .5s;
+    display: flex;
+    text-align: center;
+}
+
+.card2:hover .img2 {
+    width: 430px;
+    opacity: 1;
+}
+
+.card2:hover .img2 span {
+    font-size: 28px;
+    font-weight: lighter;
+}
+
+.card2 .content {
+    padding: 0px 20px;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    transform: translateY(30px);
+}
+
+.card2:hover .content {
+    color: 0000FF;
+    height: 150px;
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card2 .content p {
+    margin: 0;
+}
+
+.card2 .content .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card2 .content .desc {
+    font-size: 14px;
+    font-weight: 100;
+    color: #FFF;
+    opacity: .8;
+    margin-top: 8px;
+}
+
+.card2 .arrow {
+    padding: 15px;
+    transform: rotate(-180deg);
+    transition: all .5s;
+}
+
+.card2:hover .arrow {
+    transform: rotate(0);
+}
+
+.card2 .arrow span {
+    font-size: 24px;
+}
+
+.negrito{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+ }
+ 
+ .edit {
+    margin-right: 10px;
+ }
+ 
+ .edit>i {
+    color: #3F51B5;
+ }
+ 
+ .delete>i {
+    color: #e35e6b
+ }
+ 
+ .tutor {
+    cursor: pointer;
+ }
+ 
+ .tutor:hover {
+    color: #0000FF;
+    font-size: 13px;
+ }
+ 
+ .dogProfile {
+    cursor: pointer;
+ }
+ 
+ .dogProfile:hover {
+    color: #0000FF;
+    font-size: 13px;
+ }
+ 
+ .filter{
+    margin-left: 20px;
+    width: 30%;
+ }
+ 
+ .search-input:focus button i {
+    color: red;
+ } 
+
+ .background{
+    height: fit-content;
+ }
+ 
+ caption{
+    background-color: white;
+    font-size: 17px;
+ }

@@ -1,0 +1,64 @@
+.all {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.home .title {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.example-tooltip-red {
+    background: #b71c1c;
+}
+
+.home .subtitle {
+    font-size: 1.1rem;
+}
+
+.container {
+    padding: 6px;
+    width: 56vh;
+    max-height: 200px;
+}
+
+img {
+    padding: 5px;
+    display: flex;
+    width: 55vh;
+    height: 54vh;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.img-loc {
+    width: 50vh;
+}
+
+.img-vet {
+    width: 50vh;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+    font-size: 16px;
+    font-style: italic;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../../assets/background/SL-100420-36140-29.jpg');
+    background-size: contain;
+}

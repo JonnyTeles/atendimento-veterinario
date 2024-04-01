@@ -1,0 +1,70 @@
+<div class="background">
+    <div class="container">
+        <mat-card>
+            <mat-card-title>Excluir Atendimento</mat-card-title>
+            <form [formGroup]="atendimentoForm" #formDir="ngForm"
+                *ngIf="atendimentoForm" (submit)="deleteAtendimento()">
+                <mat-form-field appearance="outline">
+                    <mat-label>ID</mat-label>
+                    <input matInput
+                        formControlName="id" name="id">
+                    <mat-icon matSuffix class="icon">fingerprint</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Data e Hora</mat-label>
+                    <input matInput
+                        formControlName="data" name="data">
+                    <mat-icon matSuffix class="icon">calendar_monthmat-icon</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Tutor</mat-label>
+                    <input matInput
+                        formControlName="cliente" name="tutor">
+                    <mat-icon matSuffix class="icon">person</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Cachorro</mat-label>
+                    <input matInput
+                        formControlName="cachorro" name="cachorro">
+                    <mat-icon matSuffix class="icon">pets</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Veterinário</mat-label>
+                    <input matInput
+                        formControlName="veterinario" name="veterinario">
+                    <mat-icon matSuffix class="icon">person</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Diagnóstico</mat-label>
+                    <input matInput
+                        formControlName="diagnostico" name="diagnostico">
+                    <mat-icon matSuffix class="icon">comment</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Comentários</mat-label>
+                    <input matInput
+                        formControlName="comentarios" name="comentarios">
+                    <mat-icon matSuffix class="icon">comment</mat-icon>
+                </mat-form-field>
+                <button mat-raised-button color="warn">
+                    <i class="material-icons">
+                        delete
+                    </i>
+                    Excluir
+                </button>
+
+                <button mat-raised-button (click)="cancel()" color="primary">
+                    <i class="material-icons">
+                        cancel
+                    </i>
+                    Cancelar
+                </button>
+            </form>
+        </mat-card>
+
+        <div class="img">
+            <img src="../../../../assets/img/dogifollowconfused.png" alt="k">
+        </div>
+
+    </div>
+</div>

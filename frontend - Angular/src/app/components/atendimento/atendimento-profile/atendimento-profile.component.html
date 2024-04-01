@@ -1,0 +1,95 @@
+<div class="background">
+
+    <mat-card class="card" *ngIf="atendimento">
+        <mat-card-title>Informações do Atendimento</mat-card-title>
+        <mat-card-content>
+            <mat-label>
+                ID: {{atendimento.idAtendimento}}
+            </mat-label>
+            <br>
+            <mat-label>
+                Data: {{atendimento.data}}
+            </mat-label>
+            <br>
+            <mat-label>
+                Diagnóstico: {{atendimento.diagnostico}}
+            </mat-label>
+            <br>
+            <mat-label>
+                Comentários adicionais: {{atendimento.comentarios}}
+            </mat-label>
+        </mat-card-content>
+    </mat-card>
+    
+<mat-card class="card" *ngIf="atendimento">
+    <mat-card-title> Dados do cachorro - {{atendimento.cachorro.nome}}</mat-card-title>
+    <mat-card-content>
+        <mat-label>
+            ID: {{atendimento.cachorro.id}}
+        </mat-label>
+        <mat-label>
+            Raça: {{atendimento.cachorro.raca.name}}
+        </mat-label>
+        <br>
+        <mat-label>Sexo: {{atendimento.cachorro.sexo}}</mat-label>
+        <br>
+        <mat-label>Idade: {{atendimento.cachorro.idade}}</mat-label>
+        <br>
+        <mat-label>Peso: {{atendimento.cachorro.peso}}</mat-label>
+        <br>
+        <mat-label>Cor: {{atendimento.cachorro.cor}}</mat-label>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="card-raca" *ngIf="atendimento">
+    <mat-card-header>
+        <mat-card-title>Dados Globais da Raça</mat-card-title>
+        <mat-card-subtitle>{{atendimento.cachorro.raca.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-x1-image class="card-image"
+        src="{{imagem}}"
+        alt="{{atendimento.cachorro.raca.name}}-image"
+        onerror="src='../../../../assets/img/img-error.png'">
+    <mat-card-content>
+        <mat-label> Espectativa de vida: {{atendimento.cachorro.raca.life_span}}</mat-label>
+        <br>
+        <mat-label> Criado para: {{atendimento.cachorro.raca.bred_for}}</mat-label>
+        <br>
+        <mat-label> Temperamento: {{atendimento.cachorro.raca.temperament}}</mat-label>
+        <br>
+        <mat-label> Peso: {{atendimento.cachorro.raca.weight.metric}} Kg</mat-label>
+        <br>
+        <mat-label> Altura: {{atendimento.cachorro.raca.height.metric}} Cm</mat-label>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="card" *ngIf="atendimento">
+    <mat-card-title> Dados do tutor - {{atendimento.cliente.nome}}</mat-card-title>
+    <mat-card-content>
+        <mat-label>ID: {{atendimento.cliente.id}}</mat-label>
+        <br>
+        <mat-label>
+            Email: {{atendimento.cliente.email}}
+        </mat-label>
+        <br>
+        <mat-label>CPF: {{atendimento.cliente.cpf}}</mat-label>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card class="card" *ngIf="atendimento">
+    <mat-card-title> Dados do veterinário - {{atendimento.veterinario.nome}}</mat-card-title>
+    <mat-card-content>
+        <mat-label>ID: {{atendimento.veterinario.id}}</mat-label>
+        <br>
+        <mat-label>
+            Email: {{atendimento.veterinario.email}}
+        </mat-label>
+        <br>
+        <mat-label>CPF: {{atendimento.veterinario.cpf}}</mat-label>
+        <br>
+        <mat-label>Especialização: {{atendimento.veterinario.especializacao}}</mat-label>
+    </mat-card-content>
+</mat-card>
+
+</div>

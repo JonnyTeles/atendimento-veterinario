@@ -1,0 +1,31 @@
+.img {
+   background-size: cover;
+}
+
+.imgGrande {
+   background-size: cover;
+   width: 50vh;
+   height: 40vh;
+   padding: 10px;
+}
+
+.card {
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+   height: fit-content;
+   padding: 20px;
+   margin: 5px;
+}
+
+.container {
+   display: flex;
+   margin-left: 10px;
+}
+
+.dog {
+   display: flex;
+   flex-direction: column;
+   margin-left: 25%;
+   margin-top: 2%;
+}

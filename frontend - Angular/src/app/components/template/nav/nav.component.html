@@ -1,0 +1,64 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixed fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">
+                    home
+                </i>
+                Início
+            </a>
+            <a mat-list-item [routerLink]="['/clients/profile/', localStorage.get('id')]" *ngIf="clienteService.isUserLoggedIn() && clienteService.getAuthRole() == 'Cliente' ">
+                <i class="material-icons">
+                    account_circle
+                </i>
+                Perfil
+            </a>
+            <a mat-list-item [routerLink]="['/veterinarios/profile/', localStorage.get('id')]" *ngIf="veterinarioService.isUserLoggedIn() && veterinarioService.getAuthRole() == 'Veterinario' ">
+                <i class="material-icons">
+                    account_circle
+                </i>
+                Perfil
+            </a>
+            <a mat-list-item routerLink="/login" *ngIf="!clienteService.isUserLoggedIn() && !veterinarioService.isUserLoggedIn()">
+                <i class="material-icons">
+                    login
+                </i>
+                Login
+            </a>
+            <a mat-list-item routerLink="/clients" *ngIf="veterinarioService.isUserLoggedIn() && veterinarioService.getAuthRole() == 'Veterinario' ">
+                <i class="material-icons">
+                    manage_accounts
+                </i>
+                Clientes
+            </a>
+            <a mat-list-item routerLink="/veterinarios" *ngIf="veterinarioService.isUserLoggedIn() && veterinarioService.getAuthRole() == 'Veterinario' ">
+                <i class="material-icons">
+                    manage_accounts
+                </i>
+                Veterinários
+            </a>
+            <a mat-list-item routerLink="/cachorros" *ngIf="veterinarioService.isUserLoggedIn() && veterinarioService.getAuthRole() == 'Veterinario' ">
+                <i class="material-icons">
+                    pets
+                </i>
+                Cachorros
+            </a>
+            <a mat-list-item routerLink="/racas">
+                <i class="material-icons">
+                    pets
+                </i>
+                Raças
+            </a>
+            <a mat-list-item routerLink="/atendimentos" *ngIf="veterinarioService.isUserLoggedIn() && veterinarioService.getAuthRole() == 'Veterinario' ">
+                <i class="material-icons">
+                    calendar_month
+                </i>
+                Atendimentos
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+<mat-sidenav-content class="content"> 
+   <router-outlet></router-outlet>
+</mat-sidenav-content>
+
+</mat-sidenav-container>

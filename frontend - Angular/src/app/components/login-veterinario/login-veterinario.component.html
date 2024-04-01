@@ -1,0 +1,43 @@
+<div class="background">
+    <div class="container">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-title>Login de Veterinários</mat-card-title>
+            <form [formGroup]="loginUsuario" *ngIf="loginUsuario"
+                #formDir="ngForm" (submit)="loginUser()">
+                <mat-form-field appearance="outline">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email"
+                        name="email" type="email" autocomplete="nope">
+                        <mat-icon matSuffix class="icon">mail</mat-icon>
+                        <mat-error *ngIf="email.errors?.['required']">O campo e-mail é
+                            <strong>obrigatório.</strong></mat-error>
+                            <mat-error *ngIf="email.errors?.['email']">E-mail inválido</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="password"
+                        formControlName="senha" name="senha"
+                        autocomplete="nope">
+                        <mat-icon matSuffix class="icon">lock</mat-icon>
+                        <mat-error *ngIf="senha.errors?.['required']">O campo senha é
+                            <strong>obrigatório,</strong></mat-error>
+                </mat-form-field>
+                <button mat-raised-button type="submit" color="primary">
+                    <i class="material-icons">
+                        login
+                    </i>
+                    Entrar
+                </button>
+            </form>
+
+            <a routerLink="/esqueceu-senha">Esqueceu sua senha?</a>
+
+        </mat-card>
+        <div class="img" *ngIf="invalido">
+            <img src="../../../assets/img/dogifollowconfused.png" alt="k">
+        </div>
+        <div class="img" *ngIf="!invalido">
+            <img src="../../../assets/img/dog-cabeca.png" alt="k">
+        </div>
+    </div>
+</div>

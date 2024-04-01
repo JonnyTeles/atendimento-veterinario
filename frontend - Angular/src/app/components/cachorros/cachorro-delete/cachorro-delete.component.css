@@ -1,0 +1,39 @@
+form mat-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    min-width: 150px;
+    max-width: 500px;
+}
+
+form button {
+    margin: 20px 15px 0px 0px;
+}
+
+mat-card {
+    margin: 20px;
+    width: 40%;
+    height: 40%;
+}
+
+.container {
+    display: flex;
+}
+
+.img {
+    display: flex;
+     flex-direction: column-reverse;
+     margin-top: 16%;
+}
+
+.label {
+    margin-right: 16px
+}
+
+.background{
+    height: fit-content;
+}
+
+.icon{
+    width: 30px;
+ }

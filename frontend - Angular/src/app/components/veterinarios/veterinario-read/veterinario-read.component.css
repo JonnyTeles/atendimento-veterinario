@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+.edit {
+    margin-right: 10px;
+}
+
+.edit>i {
+    color: #3F51B5;
+}
+
+.delete>i {
+    color: #e35e6b
+}
+
+.filter{
+   margin-left: 20px;
+   width: 30%;
+   background-color: white;
+}
+

@@ -1,0 +1,43 @@
+<div class="background">
+    <div class="container">
+        <mat-card class="card mat-elevation-z4">
+            <mat-card-header>
+                <div mat-card-avatar class="img" style="background-image:
+                    url({{imagem}});"> </div>
+                <mat-card-title>{{nome}}</mat-card-title>
+                <mat-card-subtitle>{{racaDog}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{imagem}}" alt="{{racaDog}}-image" onerror="src='../../../../assets/img/img-error.png'"
+                class="imgGrande">
+            <mat-card-content>
+                <mat-label>
+                    Raça: {{racaDog}}
+                </mat-label>
+                <br>
+                <mat-label>
+                    Sexo: {{sexo}}
+                </mat-label>
+                <br>
+                <mat-label>
+                    Idade: {{idade}} anos
+                </mat-label>
+                <br>
+                <mat-label>
+                    Peso: {{peso}}kg
+                </mat-label>
+                <br>
+                <mat-label>
+                    Cor: {{cor}}
+                </mat-label>
+                <br>
+                <mat-label>Tutor: </mat-label>
+                <mat-label>
+                    {{tutor}}
+                </mat-label>
+            </mat-card-content>
+        </mat-card>
+
+        <img src="./../../../../assets/img-home/img8.png" alt="doggo"
+            class="dog">
+    </div>
+</div>

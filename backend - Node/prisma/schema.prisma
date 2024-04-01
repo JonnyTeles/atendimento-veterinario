@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Clientes {
+  id            Int           @id @default(autoincrement())
+  nome          String
+  email         String        @unique
+  senha         String
+  cpf           String        @unique
+  passwordToken String?       @unique
+  cachorros     Cachorros[]
+  atendimento   Atendimento[] @relation("clientes")
+  Roles         Roles?        @relation(fields: [rolesId], references: [id])
+  rolesId       Int
+
+  @@map("clientes")
+}
+
+model Cachorros {
+  id          Int           @id @default(autoincrement())
+  nome        String
+  raca        Json
+  sexo        String
+  cor         String
+  idade       Int
+  peso        Float
+  tutor       Clientes      @relation(fields: [clienteId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  clienteId   Int
+  atendimento Atendimento[] @relation("cachorros")
+
+  @@map("cachorros")
+}
+
+model Veterinarios {
+  id             Int           @id @default(autoincrement())
+  nome           String
+  email          String        @unique
+  senha          String
+  cpf            String        @unique
+  especializacao String        @db.VarChar(2000)
+  passwordToken  String?       @unique
+  Atendimento    Atendimento[] @relation("veterinarios")
+  Roles          Roles         @relation(fields: [rolesId], references: [id])
+  rolesId        Int
+
+  @@map("veterinarios")
+}
+
+model Atendimento {
+  idAtendimento Int          @default(autoincrement())
+  data          String       @unique
+  diagnostico   String?      @db.VarChar(2000)
+  comentarios   String?      @db.VarChar(2000)
+  cliente       Clientes     @relation("clientes", fields: [clienteId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  clienteId     Int
+  cachorro      Cachorros    @relation("cachorros", fields: [cachorroId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  cachorroId    Int
+  veterinario   Veterinarios @relation("veterinarios", fields: [veterinarioId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  veterinarioId Int
+
+  @@id([idAtendimento])
+  @@map("atendimentos")
+}
+
+model Roles {
+  id           Int            @id @default(autoincrement())
+  role         String         @unique
+  clientes     Clientes[]
+  veterinarios Veterinarios[]
+
+  @@map("roles")
+}

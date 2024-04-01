@@ -1,0 +1,113 @@
+<div class="background">
+    <div class="container">
+        <mat-card>
+            <mat-card-title>Cadastrar cachorro</mat-card-title>
+            <form [formGroup]="cachorroForm" *ngIf="cachorroForm"
+                #formDir="ngForm"
+                (submit)="createDog()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome</mat-label>
+                    <input matInput formControlName="nome"
+                        name="nome" autocomplete="nope">
+
+                    <mat-error *ngIf="nome.errors?.['required']">O campo nome é
+                        <strong>obrigatório.</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Raca</mat-label>
+                    <mat-select matInput placeholder="raca"
+                        formControlName="racaId" name="raca">
+                        <mat-option *ngFor="let racas of raca"
+                            [value]="racas.id">
+                            {{racas.id}} - {{racas.name}}
+                        </mat-option>
+                    </mat-select>
+
+                    <mat-error *ngIf="racaId.errors?.['required']">O campo raça é
+                        <strong>obrigatório.</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-radio-group aria-label="Sexo" color="primary"
+                    formControlName="sexo" name="sexo" [ngClass]="{error:
+                    sexo.invalid && formDir.submitted}">
+                    <mat-label class="label">Sexo</mat-label>
+                    <mat-radio-button value="Macho">Macho</mat-radio-button>
+                    <mat-radio-button value="Fêmea">Fêmea</mat-radio-button>
+                    
+                    <mat-error *ngIf="sexo.errors?.['required'] && formDir.submitted">O campo sexo é
+                        <strong>obrigatório.</strong>
+                    </mat-error>
+                </mat-radio-group>
+           
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Cor</mat-label>
+                    <input matInput formControlName="cor"
+                        name="cor" autocomplete="nope">
+                        <mat-error *ngIf="cor.errors?.['required']">O campo cor é
+                            <strong>obrigatório.</strong>
+                        </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Peso (kg)</mat-label>
+                    <input matInput formControlName="peso"
+                        name="peso" type="number" inputmode="numeric"
+                        autocomplete="nope">
+                        <mat-error *ngIf="peso.errors?.['required']">O campo peso é
+                            <strong>obrigatório.</strong>
+                        </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Idade (anos)</mat-label>
+                    <input matInput formControlName="idade"
+                        name="idade" type="number" inputmode="numeric"
+                        autocomplete="nope">
+                        <mat-error *ngIf="idade.errors?.['required']">O campo idade é
+                            <strong>obrigatório.</strong>
+                        </mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Tutor</mat-label>
+                    <mat-select matInput placeholder="tutor"
+                        formControlName="clienteId" name="tutor">
+                        <mat-option *ngFor="let clientes of cliente"
+                            [value]="clientes.id">
+                            {{clientes.id}} - {{clientes.nome}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="clienteId.errors?.['required']">O campo tutor é
+                        <strong>obrigatório.</strong>
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button type="submit" color="primary">
+                    <i class="material-icons">
+                        save
+                    </i>
+                    Salvar
+                </button>
+
+                <button mat-raised-button (click)="cancel()" color="warn">
+                    <i class="material-icons">
+                        cancel
+                    </i>
+                    Cancelar
+                </button>
+            </form>
+        </mat-card>
+
+        <div class="img" *ngIf="invalido">
+            <img src="../../../../assets/img/dogifollowconfused.png" alt="k">
+        </div>
+        <div class="img" *ngIf="!invalido">
+            <img src="../../../../assets/img/dog-cabeca.png" alt="k">
+        </div>
+
+    </div>
+</div>
